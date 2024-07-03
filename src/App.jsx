@@ -1,22 +1,16 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Home } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/sidebar"; // Update to use sidebar layout
 import SlotMachine from "./pages/SlotMachine.jsx"; // Import SlotMachine page
-import Index from "./pages/Index.jsx";
+
 const queryClient = new QueryClient();
 
 export const navItems = [
   {
-    title: "Home", // Feel free to change this to your liking
-    to: "/",
-    icon: <Home className="h-4 w-4" />,
-  },
-  {
     title: "Slot Machine", // Add Slot Machine navigation item
-    to: "/slot-machine",
+    to: "/",
     icon: <Home className="h-4 w-4" />,
   },
 ];
@@ -29,8 +23,7 @@ const App = () => {
         <Router>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route index element={<Index />} />
-              <Route path="slot-machine" element={<SlotMachine />} /> {/* Add SlotMachine route */}
+              <Route index element={<SlotMachine />} />
             </Route>
           </Routes>
         </Router>

@@ -56,7 +56,7 @@ const SlotMachine = () => {
           >
             {definition}
           </motion.div>
-          <Button onClick={spinSlotMachine} className="mt-4 bg-gradient-to-r from-pink-500 to-yellow-500 text-white text-xl py-2 px-4 rounded-lg">
+          <Button onClick={spinSlotMachine} className="mt-4 bg-gradient-to-r from-pink-500 to-yellow-500 text-white text-xl py-4 px-6 rounded-lg">
             Appuyer
           </Button>
         </CardContent>
