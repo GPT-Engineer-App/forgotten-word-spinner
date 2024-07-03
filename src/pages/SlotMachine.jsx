@@ -46,9 +46,16 @@ const SlotMachine = () => {
               animate={{ y: spinning ? [0, -100, 0] : 0 }}
               transition={{ duration: 2, ease: "easeInOut" }}
             >
-              {definition}
+              {word}
             </motion.div>
           </div>
+          <motion.div
+            className="slot-machine-definition text-lg mt-4"
+            animate={{ opacity: spinning ? 0 : 1 }}
+            transition={{ duration: 1 }}
+          >
+            {definition}
+          </motion.div>
           <Button onClick={spinSlotMachine} className="mt-4 bg-gradient-to-r from-pink-500 to-yellow-500 text-white text-xl py-2 px-4 rounded-lg">
             Appuyer
           </Button>
