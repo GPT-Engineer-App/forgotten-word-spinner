@@ -35,18 +35,12 @@ const SlotMachine = () => {
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <Card className="w-full max-w-md p-4">
         <CardHeader>
-          <CardTitle className="text-center text-2xl">Machine à Sous</CardTitle>
+          <CardTitle className="text-center text-2xl">{word}</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col items-center">
           <div className="slot-machine relative">
             <img src={slotMachineGraphic} alt="Slot Machine" className="w-full h-auto" />
-            <motion.div
-              className="slot-machine-window text-3xl font-bold absolute top-[30%] left-[50%] transform -translate-x-1/2 -translate-y-1/2"
-              animate={{ y: spinning ? [0, -100, 0] : 0 }}
-              transition={{ duration: 2, ease: "easeInOut" }}
-            >
-              {word}
-            </motion.div>
+            
             <motion.div
               className="slot-machine-window text-lg mt-2 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2"
               animate={{ y: spinning ? [0, -100, 0] : 0 }}
