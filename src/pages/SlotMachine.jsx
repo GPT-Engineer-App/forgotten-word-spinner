@@ -3,6 +3,7 @@ import slotMachineData from "../data/slotMachineData.json";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import slotMachineGraphic from "../../public/images/slot-machine-graphic.png"; // Import the new slot machine graphic
 
 const SlotMachine = () => {
   const [word, setWord] = useState("");
@@ -37,16 +38,17 @@ const SlotMachine = () => {
           <CardTitle className="text-center text-2xl">Machine à Sous</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col items-center">
-          <div className="slot-machine">
+          <div className="slot-machine relative">
+            <img src={slotMachineGraphic} alt="Slot Machine" className="w-full h-auto" />
             <motion.div
-              className="slot-machine-window text-3xl font-bold"
+              className="slot-machine-window text-3xl font-bold absolute top-[30%] left-[50%] transform -translate-x-1/2 -translate-y-1/2"
               animate={{ y: spinning ? [0, -100, 0] : 0 }}
               transition={{ duration: 2, ease: "easeInOut" }}
             >
               {word}
             </motion.div>
             <motion.div
-              className="slot-machine-window text-lg mt-2"
+              className="slot-machine-window text-lg mt-2 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2"
               animate={{ y: spinning ? [0, -100, 0] : 0 }}
               transition={{ duration: 2, ease: "easeInOut" }}
             >
