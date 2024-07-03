@@ -24,7 +24,7 @@ const SlotMachine = () => {
       setDefinition(selectedWord.definition);
       setSpinning(false);
       setShowFireworks(true);
-    }, 2000);
+    }, 1500);
   };
 
   useEffect(() => {
@@ -40,8 +40,8 @@ const SlotMachine = () => {
       <motion.div
         key={index}
         className="reel"
-        animate={{ y: spinning ? [0, -100, 0] : 0 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
+        animate={{ y: spinning ? [0, -200, 0] : 0 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
       >
         {letter}
       </motion.div>
