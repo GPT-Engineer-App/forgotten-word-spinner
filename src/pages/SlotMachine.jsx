@@ -34,6 +34,20 @@ const SlotMachine = () => {
     }
   }, [showFireworks]);
 
+  const renderReels = () => {
+    const letters = word.split("");
+    return letters.map((letter, index) => (
+      <motion.div
+        key={index}
+        className="reel"
+        animate={{ y: spinning ? [0, -100, 0] : 0 }}
+        transition={{ duration: 2, ease: "easeInOut" }}
+      >
+        {letter}
+      </motion.div>
+    ));
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <Card className="w-full max-w-2xl p-4">
@@ -43,12 +57,9 @@ const SlotMachine = () => {
         <CardContent className="flex flex-col items-center">
           <div className="slot-machine relative w-full max-w-lg">
             <img src={slotMachineGraphic} alt="Slot Machine" className="w-full h-auto" />
-            
-            <motion.div
-              className="slot-machine-window text-2xl mt-2 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 font-bold"
-              animate={{ y: spinning ? [0, -100, 0] : 0 }}
-              transition={{ duration: 2, ease: "easeInOut" }}
-            />
+            <div className="slot-machine-window text-2xl mt-2 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 font-bold flex">
+              {renderReels()}
+            </div>
           </div>
           <motion.div
             className="slot-machine-definition text-lg mt-4 font-medium"
